@@ -17,6 +17,7 @@
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+  [![Node.js](https://img.shields.io/badge/Node.js-20.0-green)](https://nodejs.org/)
   [![LangChain](https://img.shields.io/badge/LangChain.js-0.2.0-green)](https://js.langchain.com/)
   
 </div>
@@ -69,7 +70,6 @@ We are constantly pushing the boundaries of Agentic AI. Next in the pipeline:
 -   [ ] **Agentic RAG**: Moving beyond static retrieval to "Active Research," where the agent iteratively queries, filters, and summarizes documents.
 -   [ ] **MCP (Model Context Protocol)**: Universal standard for connecting AI agents to external databases and tools without custom integrations.
 -   [ ] **Multi-Agent Orchestration**: A "Supervisor" agent managing sub-agents (Coder, Researcher, Reviewer) for complex tasks.
--   [ ] **Voice Mode**: Real-time audio-to-audio interaction support.
 
 ---
 
@@ -175,3 +175,24 @@ npx tsx rag/ragagent1.ts  # Runs the CLI version of RAG
   <p>For detailed documentation, visit the <a href="https://js.langchain.com">LangChain JS Docs</a>.</p>
   <i>Crafted with precision for the next generation of AI Engineers.</i>
 </div>
+
+---
+
+## 👨‍💻 Author
+
+Developed and maintained by **Abhinav**  
+[🔗 GitHub Profile](https://github.com/abhi9avx)
+
+Made with ❤️ for the **SDET community**. Please give a ⭐ if you find this project helpful!
+
+---
+
+## 🤝 Contribution & Forking
+
+We welcome contributions! If you'd like to enhance this framework:
+
+1.  **Fork the repository**.
+2.  **Create a Feature Branch** (`git checkout -b feature/AmazingFeature`).
+3.  **Commit your changes** (`git commit -m 'Add some AmazingFeature'`).
+4.  **Push to the branch** (`git push origin feature/AmazingFeature`).
+5.  **Open a Pull Request**.
