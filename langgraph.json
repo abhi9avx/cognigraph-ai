@@ -1,0 +1,6 @@
+{
+    "graphs": {
+        "rag_agent": "./rag/ragagentserver.ts:graph"
+    },
+    "env": ".env"
+}

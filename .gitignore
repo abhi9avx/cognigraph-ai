@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Environment Variables
+.env
+
+# Build outputs
+dist/
+build/
+*.js
+!agent*.ts
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# TypeScript
+tsconfig.tsbuildinfo
+
+# Persistence (if using local storage checkpointers)
+*.sqlite
+*.db
+
+# LangGraph API
+.langgraph_api
+
+# Project Documentation & Data
+ProjectDocs/
