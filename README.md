@@ -37,53 +37,34 @@ The **CogniGraph AI** framework is not just a chat bot; it is a sophisticated **
 
 ---
 
-## 🧠 Deep Dive: AI Terminology & Concepts
+## 🚀 Setup & Execution
 
-New to the AI Engineering world? Here is your cheat sheet:
+### 1. Installation
+```bash
+# Clone the repository
+git clone https://github.com/your-repo/cognigraph-ai.git
 
-### 📖 RAG (Retrieval Augmented Generation)
-**The Analogy:** Imagine taking a test.
-*   **LLM (ChatGPT/Gemini):** A student trying to answer from memory. Reliable but can hallucinate or be outdated.
-*   **RAG:** Giving that student an open textbook (your PDF data) to search through before answering.
-*   **Result:** Answers are **grounded**, factual, and specific to your private data.
+# Install dependencies
+npm install
 
-### 🔢 Embeddings & Vectors
-Computers don't understand text; they understand numbers.
-*   **Embedding Model:** Converts a sentence like "Nike's revenue" into a long list of numbers (e.g., `[0.1, -0.5, 0.8...]`).
-*   **Semantic Search:** We don't just match keywords. We find "numbers" that are close to each other. So "Runner's shoes" will match "Nike Pegasus" even if the words share no common letters.
+# Setup environment
+cp .env.example .env
+# Add your GOOGLE_API_KEY
+```
 
-### 🤖 Agentic Workflow
-Standard LLMs are **Passive** (Input -> Output).
-**Agents** are **Active** Loops (Input -> Thought -> Action -> Observation -> Thought -> Output).
-They can correct their own mistakes, research a topic for hours, or write code to solve a problem.
+### 2. Development Mode (LangGraph Studio)
+For the full visual debugging experience:
+```bash
+npx langgraphjs dev
+```
+Use the **LangSmith Studio** link printed in the terminal to inspect your agent's decision-making process visually.
 
-### 🔌 MCP (Model Context Protocol) 🆕
-**The New Standard:** Currently, connecting an Agent to a Database requires writing custom API code.
-**MCP** is an open standard (like USB for AI) that lets AI models connect to *any* data source (Slack, GitHub, PostgreSQL) repeatedly without custom glue code. It is the future of interoperability.
-
----
-
-## 🔮 Upcoming Roadmap
-
-We are constantly pushing the boundaries of Agentic AI. Next in the pipeline:
-
--   [ ] **Agentic RAG**: Moving beyond static retrieval to "Active Research," where the agent iteratively queries, filters, and summarizes documents.
--   [ ] **MCP (Model Context Protocol)**: Universal standard for connecting AI agents to external databases and tools without custom integrations.
--   [ ] **Multi-Agent Orchestration**: A "Supervisor" agent managing sub-agents (Coder, Researcher, Reviewer) for complex tasks.
-
----
-
-## 🛠️ Performance Tech Stack
-
-We chose this stack for maximum **throughput** and **developer experience**:
-
-| Component | Choice | Why we chose it? |
-| :--- | :--- | :--- |
-| **LLM Engine** | **Google Gemini 2.5 Flash** | Significantly faster and cheaper than GPT-4o while maintaining high reasoning capabilities. |
-| **Orchestrator** | **LangGraph** | Provides cyclic, stateful control flows (loops) which linear `Chains` cannot handle. |
-| **Vector DB** | **HNSWLib (In-Memory)** | Ultra-fast approximate nearest neighbor search without the overhead of an external DB server like Pinecone. |
-| **Runtime** | **Node.js / TypeScript** | Ensures type safety across the entire stack, preventing runtime errors in complex logic flows. |
-| **Tracing** | **LangSmith** | Full observability into agent "thoughts," latency, and token usage for optimization. |
+### 3. CLI Execution
+Run specific agent evolutions directly in the terminal:
+```bash
+npx tsx agents/agent5.ts  # Runs the Dynamic Model agent
+npx tsx rag/ragagent1.ts  # Runs the CLI version of RAG
+```
 
 ---
 
@@ -140,41 +121,53 @@ stateDiagram-v2
 
 ---
 
-## 🚀 Setup & Execution
+## 🧠 Deep Dive: AI Terminology & Concepts
 
-### 1. Installation
-```bash
-# Clone the repository
-git clone https://github.com/your-repo/cognigraph-ai.git
+New to the AI Engineering world? Here is your cheat sheet:
 
-# Install dependencies
-npm install
+### 📖 RAG (Retrieval Augmented Generation)
+**The Analogy:** Imagine taking a test.
+*   **LLM (ChatGPT/Gemini):** A student trying to answer from memory. Reliable but can hallucinate or be outdated.
+*   **RAG:** Giving that student an open textbook (your PDF data) to search through before answering.
+*   **Result:** Answers are **grounded**, factual, and specific to your private data.
 
-# Setup environment
-cp .env.example .env
-# Add your GOOGLE_API_KEY
-```
+### 🔢 Embeddings & Vectors
+Computers don't understand text; they understand numbers.
+*   **Embedding Model:** Converts a sentence like "Nike's revenue" into a long list of numbers (e.g., `[0.1, -0.5, 0.8...]`).
+*   **Semantic Search:** We don't just match keywords. We find "numbers" that are close to each other. So "Runner's shoes" will match "Nike Pegasus" even if the words share no common letters.
 
-### 2. Development Mode (LangGraph Studio)
-For the full visual debugging experience:
-```bash
-npx langgraphjs dev
-```
-Use the **LangSmith Studio** link printed in the terminal to inspect your agent's decision-making process visually.
+### 🤖 Agentic Workflow
+Standard LLMs are **Passive** (Input -> Output).
+**Agents** are **Active** Loops (Input -> Thought -> Action -> Observation -> Thought -> Output).
+They can correct their own mistakes, research a topic for hours, or write code to solve a problem.
 
-### 3. CLI Execution
-Run specific agent evolutions directly in the terminal:
-```bash
-npx tsx agents/agent5.ts  # Runs the Dynamic Model agent
-npx tsx rag/ragagent1.ts  # Runs the CLI version of RAG
-```
+### 🔌 MCP (Model Context Protocol) 🆕
+**The New Standard:** Currently, connecting an Agent to a Database requires writing custom API code.
+**MCP** is an open standard (like USB for AI) that lets AI models connect to *any* data source (Slack, GitHub, PostgreSQL) repeatedly without custom glue code. It is the future of interoperability.
 
 ---
 
-<div align="center">
-  <p>For detailed documentation, visit the <a href="https://js.langchain.com">LangChain JS Docs</a>.</p>
-  <i>Crafted with precision for the next generation of AI Engineers.</i>
-</div>
+## 🛠️ Performance Tech Stack
+
+We chose this stack for maximum **throughput** and **developer experience**:
+
+| Component | Choice | Why we chose it? |
+| :--- | :--- | :--- |
+| **LLM Engine** | **Google Gemini 2.5 Flash** | Significantly faster and cheaper than GPT-4o while maintaining high reasoning capabilities. |
+| **Orchestrator** | **LangGraph** | Provides cyclic, stateful control flows (loops) which linear `Chains` cannot handle. |
+| **Vector DB** | **HNSWLib (In-Memory)** | Ultra-fast approximate nearest neighbor search without the overhead of an external DB server like Pinecone. |
+| **Runtime** | **Node.js / TypeScript** | Ensures type safety across the entire stack, preventing runtime errors in complex logic flows. |
+| **Tracing** | **LangSmith** | Full observability into agent "thoughts," latency, and token usage for optimization. |
+
+---
+
+## 🔮 Upcoming Roadmap
+
+We are constantly pushing the boundaries of Agentic AI. Next in the pipeline:
+
+-   [ ] **Agentic RAG**: Moving beyond static retrieval to "Active Research," where the agent iteratively queries, filters, and summarizes documents.
+-   [ ] **MCP (Model Context Protocol)**: Universal standard for connecting AI agents to external databases and tools without custom integrations.
+-   [ ] **Multi-Agent Orchestration**: A "Supervisor" agent managing sub-agents (Coder, Researcher, Reviewer) for complex tasks.
 
 ---
 
@@ -196,3 +189,10 @@ We welcome contributions! If you'd like to enhance this framework:
 3.  **Commit your changes** (`git commit -m 'Add some AmazingFeature'`).
 4.  **Push to the branch** (`git push origin feature/AmazingFeature`).
 5.  **Open a Pull Request**.
+
+---
+
+<div align="center">
+  <p>For detailed documentation, visit the <a href="https://js.langchain.com">LangChain JS Docs</a>.</p>
+  <i>Crafted with precision for the next generation of AI Engineers.</i>
+</div>
